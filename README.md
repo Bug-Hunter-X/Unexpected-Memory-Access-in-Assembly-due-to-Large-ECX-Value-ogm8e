@@ -1,0 +1,3 @@
+This repository contains an example of a common error in assembly programming that can lead to unexpected memory access. The bug is in the following line of assembly code:
+mov eax, [ebx + ecx*4 + 0x10]
+If the value of ecx is too large, the calculation ebx + ecx*4 + 0x10 will result in a memory address outside the allocated space for ebx. This can lead to a segmentation fault or data corruption. The solution demonstrates how to add a check for the value of ecx to prevent this error. 
